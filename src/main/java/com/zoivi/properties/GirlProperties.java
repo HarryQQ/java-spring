@@ -1,4 +1,4 @@
-package com.zoivi;
+package com.zoivi.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
