@@ -1,15 +1,26 @@
 package com.zoivi.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GenericGenerator(name = "idGenerator", strategy = "uuid") //这个是hibernate的注解/生成32位UUID
+    @GeneratedValue(generator = "idGenerator")
+    private String id;
+    @NotNull(message = "用户名不能为空")
+    @Size(min = 2, max = 30, message = "名字长度必须在2和30之间")
     private String username;
+    @NotNull(message = "密码不能为空")
+    @JsonIgnore
     private String password;
     private Long birthday;
     private String email;
@@ -17,11 +28,11 @@ public class User {
     private Long created;
     private Long updated;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -84,7 +95,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", birthday=" + birthday +

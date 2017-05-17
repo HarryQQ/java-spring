@@ -48,7 +48,8 @@ public class GirlController {
     @PostMapping(value = "/girls/otheradd")
     public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult) { // 第二个参数是验证结果
         if (bindingResult.hasErrors()) { // 当有验证错误时
-            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());// 提示信息设置为在对象字段已经定义好的错误信息
+            // 提示信息设置为在对象字段已经定义好的错误信息
+            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
         }
         girl.setAge(girl.getAge());
         girl.setCupSize(girl.getCupSize());

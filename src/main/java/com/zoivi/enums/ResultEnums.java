@@ -9,6 +9,8 @@ package com.zoivi.enums;
 public enum ResultEnums {
     UMKONW_ERROR(-1, "系统错误"),
     SUCCESS(200, "成功"),
+    USER_NO_FOUND(305, "用户不存在"),
+    PASSWORD_WRONG(306, "密码错误"),
     PRIMARY_SCHOOL(100, "上小学"),
     MIDDLE_SCHOOL(101, "上中学");
 
