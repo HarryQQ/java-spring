@@ -10,8 +10,8 @@ public enum ResultEnums {
     UMKONW_ERROR(-1, "系统错误"),
     SUCCESS(200, "成功"),
     PRIMARY_SCHOOL(100, "上小学"),
-    MIDDLE_SCHOOL(101, "上中学")
-    ;
+    MIDDLE_SCHOOL(101, "上中学");
+
     private Integer code;
     private String msg;
 

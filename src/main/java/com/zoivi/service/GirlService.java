@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-/**
- * Created by Administrator on 2017/4/30 0030.
- */
 @Service
 public class GirlService {
     @Autowired
